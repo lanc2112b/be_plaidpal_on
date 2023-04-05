@@ -21,7 +21,9 @@ const jwt = require("jsonwebtoken"); // this needs installing too
 
 dotenv.config({ path: "./config.env" });
 
-require("./config/passport")(passport);
+
+console.log(process.env.GOOGLE_CLIENT_ID)
+//require("./config/passport")(passport);
 
 db();
 
