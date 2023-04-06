@@ -148,6 +148,7 @@ app.post("/api/signup", async (req, res) => {
         googleId: verificationResponse?.payload.sub,
       });
       if (results.length > 0) {
+        console.log(results);
         return res
           .status(409)
           .send({ message: "PlaidPal Error: User already exists" });

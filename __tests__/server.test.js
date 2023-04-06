@@ -21,7 +21,7 @@ afterAll(() => {
   // });
 });
 
-describe("GET /api/users", () => {
+describe.only("GET /api/users", () => {
   test("200 - GET: returns array of users with the correct properties", () => {
     return request(app)
       .get("/api/users")
@@ -47,7 +47,7 @@ describe("GET /api/users", () => {
 });
 
 // NOTE - need to change all 'validInput' to create a new user each time, otherwise .skip this test
-describe.only("POST /api/users", () => {
+describe("POST /api/users", () => {
   const validInput = {
     googleId: "fred_id777",
     displayName: "fred777",
