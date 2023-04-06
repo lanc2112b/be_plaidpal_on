@@ -12,7 +12,7 @@ const {
   getSingleTransactionAndNote,
 } = require("./controllers/controller");
 const db = require("./db/db");
-const passport = require("passport");
+//const passport = require("passport");
 const session = require("express-session");
 const dotenv = require("dotenv");
 
@@ -22,7 +22,7 @@ const jwt = require("jsonwebtoken"); // this needs installing too
 dotenv.config({ path: "./config.env" });
 
 
-console.log(process.env.GOOGLE_CLIENT_ID)
+//console.log(process.env.GOOGLE_CLIENT_ID)
 //require("./config/passport")(passport);
 
 db();

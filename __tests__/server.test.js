@@ -47,7 +47,7 @@ describe("GET /api/users", () => {
 });
 
 // NOTE - need to change all 'validInput' to create a new user each time, otherwise .skip this test
-describe.skip("POST /api/users", () => {
+describe.only("POST /api/users", () => {
   const validInput = {
     googleId: "fred_id777",
     displayName: "fred777",
@@ -97,7 +97,7 @@ describe("POST /api/create_link_token", () => {
   });
 });
 
-describe.skip("POST /api/exchange_public_token", () => {
+describe("POST /api/exchange_public_token", () => {
   // NOTE - TO TEST YOU NEED TO GET A NEW PUBLIC TOKEN EACH TIME - THE TOKEN EXPIRES IN 30 MINUTES
   // OTHERWISE '.skip' THIS TEST
   // const public_token = "public-sandbox-d514a8eb-a4f8-4bbc-9d4e-5d1facbc0699";
@@ -195,7 +195,7 @@ describe("GET /api/users/:googleId", () => {
 });
 
 //NOTE - need to change this test each time to delete a user in the curent mongoDB, or else '.skip' this test
-describe.skip("Delete /api/users/:googleId", () => {
+describe("Delete /api/users/:googleId", () => {
   test("204 - Delete: returns array of users with the correct properties", () => {
     return (
       request(app)
@@ -212,7 +212,7 @@ describe.skip("Delete /api/users/:googleId", () => {
   });
 });
 
-describe.skip("", () => {
+describe("", () => {
   const obj = {
     body: { credential: null },
   };
@@ -228,7 +228,7 @@ describe.skip("", () => {
   });
 });
 
-describe.skip("", () => {
+describe("", () => {
   const obj = {
     body: { credential: null },
   };
@@ -400,7 +400,7 @@ describe("POST /api/notes/:transaction_id", () => {
   });
 });
 
-describe.only("POST /api/transactions/:transaction_id", () => {
+describe("POST /api/transactions/:transaction_id", () => {
   const obj = {
     googleId: "108971830262728991643",
   };
