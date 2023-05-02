@@ -21,7 +21,7 @@ afterAll(() => {
   // });
 });
 
-describe.only("GET /api/users", () => {
+describe("GET /api/users", () => {
   test("200 - GET: returns array of users with the correct properties", () => {
     return request(app)
       .get("/api/users")
@@ -384,7 +384,7 @@ describe("POST /api/notes/:transaction_id", () => {
       });
   });
 
-  test.only(".....", () => {
+  test(".....", () => {
     const obj = {
       googleId: "108971830262728991643",
       note: "Priority:1, Date Created: 04/04/2023: Don't forget to cancel this to avoid it recrruring",
