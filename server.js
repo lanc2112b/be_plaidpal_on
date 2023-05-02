@@ -39,17 +39,18 @@ const {
 
 const app = express();
 
-app.use(cors());
-// app.use(
-//   cors({
-//     origin: ["http://localhost:3000"],
-//     methods: "GET,POST,PUT,DELETE,OPTIONS",
-//   })
-// );   // Hmmmmmm :D   Deployed, this will be different.
+/* app.use(cors()); */
+app.use(
+  cors({
+    origin: process.env.CORS_HOST,
+    methods: "GET,POST,PUT,DELETE,OPTIONS",
+    credentials: true,
+   })
+);
 
 // res.setHeader('Access-Control-Allow-Origin', '*');
 
-app.use((req, res, next) => {
+/* app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
@@ -60,7 +61,7 @@ app.use((req, res, next) => {
   );
   res.setHeader("Access-Control-Allow-Credentials", true);
   next();
-});
+}); */
 
 app.use(express.json());
 app.use(
