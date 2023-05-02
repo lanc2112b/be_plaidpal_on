@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+require('dotenv').config();
 const User = require("./db/model/UserModel");
 const {handleAllErrors} = require('./controllers/error_handling_controllers');
 const {
@@ -14,12 +15,12 @@ const {
 const db = require("./db/db");
 //const passport = require("passport");
 const session = require("express-session");
-const dotenv = require("dotenv");
+/* const dotenv = require("dotenv"); */
 
 const { OAuth2Client } = require("google-auth-library"); // npm install this on pp-be
 const jwt = require("jsonwebtoken"); // this needs installing too
 
-dotenv.config({ path: "./config.env" });
+/* dotenv.config({ path: "./config.env" }); */
 
 
 //console.log(process.env.GOOGLE_CLIENT_ID)
