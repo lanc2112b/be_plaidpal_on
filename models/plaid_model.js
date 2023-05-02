@@ -9,9 +9,9 @@ const uuid = require("uuid");
 const User = require("../db/model/UserModel");
 
 const plaidHeaders = {
-  "PLAID-CLIENT-ID": process.env.PLAID_ID,
-  "PLAID-SECRET": process.env.PLAID_SANDBOX_SECRET,
-  "Plaid-Version": "2020-09-14",
+  'PLAID-CLIENT-ID': process.env.PLAID_ID,
+  'PLAID-SECRET': process.env.PLAID_SANDBOX_SECRET,
+  'Plaid-Version': "2020-09-14",
 };
 
 // Initialize the Plaid client
@@ -44,9 +44,7 @@ const configsForLinkTokenCreate = {
 
 exports.postCreateLink = () => {
   return plaidApi
-    .post("/link/token/create", configsForLinkTokenCreate, {
-      headers: plaidHeaders,
-    })
+    .post("/link/token/create", configsForLinkTokenCreate, plaidHeaders)
     .then((response) => {
       return client
         .linkTokenCreate(configsForLinkTokenCreate)
